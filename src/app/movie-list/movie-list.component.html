@@ -1,0 +1,22 @@
+
+<div class="bg">
+    <img class="wallpaper" src="/assets/images/wallpaper.jpg" alt="">
+    <h2>Movies</h2>
+
+    <div *ngFor="let movie of movies |keyvalue">
+        <a *ngFor="let movie of movie.value"  routerLink="/details/{{movie.imdbID}}" routerLinkActive="active">
+            <div class="poster">
+                <img class="posterImg"  src="{{movie.Poster}}">
+                <div>
+                    <strong>
+
+                        {{movie.Title}}
+                    </strong>
+                </div>
+
+
+            </div>   
+        </a> 
+    </div>  
+</div>
+
