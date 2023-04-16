@@ -1,24 +1,18 @@
 <!-- <img class="wallpaper" src="/assets/images/thumb.jpg" alt=""> -->
 
 <div *ngIf="movie">
-    <h2>Searched Results....</h2>
-
-<div class="bg">
-    <div *ngFor="let movie of movie |keyvalue">
-        <a *ngFor="let movie of movie.value"  routerLink="/details/{{movie.imdbID}}" routerLinkActive="active">
-            <div class="poster">
-                <img  src="{{movie.Poster}}">
-                <div class="info">
-                    <strong >
-
-                        {{movie.Title}}
-                    </strong>
-                </div>
-
-
-            </div>   
-        </a> 
-    </div>   
-</div>
-
+    
+    <div class="bg">
+        <h2>Searched Results....</h2>
+        <div class="scroll-cont">
+            <div class="rowposter">
+                <ng-container *ngFor="let movie of movie">
+                    <img class="rowing" src="{{movie.Poster}}" routerLink="/details/{{movie.imdbID}}"
+                        routerLinkActive="active">
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    
+    
 </div>

@@ -14,22 +14,29 @@ export class MovieListComponent implements OnInit {
 
   onSelect(movie:any){
     this.selectedMovie=movie
-    console.log(this.selectedMovie.Title)
   }
   
   movies:any[]=[];
+  series:any[]=[];
 
   constructor(private mService : MovieServiceService) { }
 
   ngOnInit(): void {
     this.getMovies();
+    this.getSeries();
   }
 
   getMovies(){ 
     this.mService.getMovies()
-      .subscribe(data=>{
-        this.movies=data;
-        console.log(this.movies);
+      .subscribe((data :any)=>{
+        this.movies=data.Search;
+      })
+  }
+
+  getSeries(){ 
+    this.mService.getSeries()
+      .subscribe((data :any)=>{
+        this.series=data.Search;
       })
   }
 

@@ -1,22 +1,61 @@
-
 <div class="bg">
-    <img class="wallpaper" src="/assets/images/wallpaper.jpg" alt="">
-    <h2>Movies</h2>
+    <div id="carouselExampleIndicators" class="carousel slide"> 
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item carousel-img transparent-gradient bg-img-1 active">
+            <img class="d-block">
+          </div>
+          <div class="carousel-item carousel-img transparent-gradient bg-img-2" >
+            <img class="d-block">
+          </div>
+          <div class="carousel-item carousel-img transparent-gradient bg-img-3">
+            <img class="d-block">
+          </div>
+          <div class="carousel-item carousel-img transparent-gradient bg-img-4">
+            <img class="d-block">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <h2 style="color: aliceblue;">Movies</h2>
 
-    <div *ngFor="let movie of movies |keyvalue">
-        <a *ngFor="let movie of movie.value"  routerLink="/details/{{movie.imdbID}}" routerLinkActive="active">
-            <div class="poster">
-                <img class="posterImg"  src="{{movie.Poster}}">
-                <div>
-                    <strong>
+    <div class="scroll-cont">
+            <div class="rowposter">
+              <ng-container *ngFor="let movie of movies" >
+                <img class="rowing" src="{{movie.Poster}}" routerLink="/details/{{movie.imdbID}}" routerLinkActive="active">
+              </ng-container>  
+            </div>
+    </div>
 
-                        {{movie.Title}}
-                    </strong>
-                </div>
+    <h2 style="color: aliceblue;">Series</h2>
 
+    <div class="scroll-cont">
+            <div class="rowposter">
+              <ng-container *ngFor="let series of series" >
+                <img class="rowing" src="{{series.Poster}}" routerLink="/details/{{series.imdbID}}" routerLinkActive="active">
+              </ng-container>  
+            </div>
+    </div>
+    <div class="footer col col-sm-12 col-md-12">
+      <footer class="py-3 my-4">
+          <div class="row">
+              <div class="col-sm-12 col-md-3 nav-brand"><a>FLEXER</a></div>
+              <div class="col-sm-12 col-md-3 nav-item"><a>© 2020 OMDb API</a></div>
+            <div class="col-sm-12 col-md-3 nav-item"><a>Developed By Risiidhan</a></div>
+          </div>
+        </footer>
+  </div>
 
-            </div>   
-        </a> 
-    </div>  
 </div>
-
