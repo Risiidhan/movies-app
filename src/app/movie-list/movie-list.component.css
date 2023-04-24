@@ -28,6 +28,11 @@
     mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))
   }
 
+  .transparent-gradient-right {
+    -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0))
+  }
+
   .bg{
     background-color: #181716;
 }
@@ -44,34 +49,24 @@
         display: flex;
         justify-content: start;
     }
-    .carousel-img {
-        height: 50vh;
+    .caro-img {
+        height: 30vh;
     }
 }
 
-.carousel-img{
+h5{
+    font-size: 1.5rem;
+    color: #B1221D;
+}
+
+.caro-img{
     width: 100vw;
-    height: 600px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 } 
 
-.bg-img-1{
-    background-image: url('https://images4.alphacoders.com/606/606649.jpg');
-}
-.bg-img-2{
-    background-image: url('https://images8.alphacoders.com/553/553032.jpg');
 
-}
-.bg-img-3{
-    background-image: url('https://images5.alphacoders.com/884/884251.jpg');
-
-}
-.bg-img-4{
-    background-image: url('https://images6.alphacoders.com/118/1188045.jpg');
-
-}
 
 
 .footer{
@@ -99,4 +94,50 @@
     margin-left: 10px;
     margin-right: 10px;
     width: 100% ;
+  }
+
+
+  .bn30 {
+    border: 5em;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #f83737dc, #700000);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: white;
+  }
+  
+  .bn30 .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg,  #f83737dc, #700000);
+  }
+  
+  .bn30:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #0e0e10;
+  }
+  
+  .bn30:hover {
+    background-image: linear-gradient(-45deg, #f83737dc, #700000);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+  }
+  
+  .bn30:hover .text {
+    background-image: linear-gradient(-45deg, #f83737dc, #700000);
   }

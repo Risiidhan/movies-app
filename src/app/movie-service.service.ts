@@ -11,20 +11,28 @@ export class MovieServiceService {
 
 
   url: string= 'https://www.omdbapi.com/?'
+  BannerUrl: string= 'https://api.themoviedb.org/3'
+  key:string = '08cc33bd5ae3a747598ce2ad84376e66';
 
- getMovies():Observable<any[]>{
-   return this.http.get<any[]>(`${this.url}s=dragon&type=movie&apikey=66ac83ae`);
+
+
+ getBanners(){
+   return this.http.get<any[]>(`${this.BannerUrl}/trending/all/week?api_key=${this.key}`);
  }
 
- getSeries():Observable<any[]>{
-  return this.http.get<any[]>(`${this.url}s=will&year=2023&type=series&apikey=66ac83ae`);
+ getTrends(){
+  return this.http.get<any[]>(`${this.BannerUrl}/trending/movie/day?api_key=${this.key}`);
 }
 
- getSelectedMovie(imdbID: any): Observable<any> {
-  return this.http.get<any>(`${this.url}i=${imdbID}&apikey=66ac83ae`);
+ getTamilMovies():Observable<any[]>{ 
+  return this.http.get<any[]>(`${this.BannerUrl}/discover/movie?api_key=${this.key}&with_original_language=ta&year=2023`);
+}
+
+ getSelectedMovie(id: any): Observable<any> {
+  return this.http.get<any>(`${this.BannerUrl}/movie/${id}?api_key=${this.key}`);
 }
 
   searchedMovie(title:any):Observable<any[]>{
-    return this.http.get<any[]>(`${this.url}s=${title}&apikey=66ac83ae`)
+    return this.http.get<any[]>(`${this.BannerUrl}/search/movie?api_key=${this.key}&query=${title}`)
   }
 }

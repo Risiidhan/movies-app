@@ -1,6 +1,11 @@
 input.transparent-input{
   background-color:transparent !important;
 }
+
+input.transparent-input:focus {
+  background-color:white;
+}
+
 .navbar-brand{
   font-weight: 700;
   color: rgb(173, 30, 30);

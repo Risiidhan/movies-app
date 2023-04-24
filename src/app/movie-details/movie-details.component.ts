@@ -26,9 +26,6 @@ export class MovieDetailsComponent implements OnInit {
     this.mService.getSelectedMovie(imdbID)
       .subscribe(movie => {
         this.movie = movie;
-        console.log(movie);
-        console.log(imdbID);
-
       });
   }  
 

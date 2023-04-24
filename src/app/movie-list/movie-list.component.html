@@ -1,50 +1,43 @@
 <div class="bg">
-    <div id="carouselExampleIndicators" class="carousel slide"> 
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
+      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item carousel-img transparent-gradient bg-img-1 active">
-            <img class="d-block">
-          </div>
-          <div class="carousel-item carousel-img transparent-gradient bg-img-2" >
-            <img class="d-block">
-          </div>
-          <div class="carousel-item carousel-img transparent-gradient bg-img-3">
-            <img class="d-block">
-          </div>
-          <div class="carousel-item carousel-img transparent-gradient bg-img-4">
-            <img class="d-block">
+          <div class="carousel-item" *ngFor="let item of banners; let i=index" data-bs-interval="25 00"
+          [ngClass]="{active:i===1}">
+            <img src="https://image.tmdb.org/t/p/original{{item.backdrop_path}}" class="d-block transparent-gradient caro-img" alt="...">
+            <div class="carousel-caption">
+              <h5 class=" d-none d-md-block">{{item.title}}</h5>
+              <p class="d-none d-md-block">{{item.overview}}</p>
+              <a routerLink="/details/{{item.id}}" class="d-md-block"><button class="bn30">VIEW</button></a>
+            </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    <h2 style="color: aliceblue;">Movies</h2>
+
+5
+    <h2 style="color: aliceblue;">Trending Movies</h2>
 
     <div class="scroll-cont">
             <div class="rowposter">
               <ng-container *ngFor="let movie of movies" >
-                <img class="rowing" src="{{movie.Poster}}" routerLink="/details/{{movie.imdbID}}" routerLinkActive="active">
+                <img class="rowing" src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" routerLink="/details/{{movie.id}}" routerLinkActive="active">
               </ng-container>  
             </div>
     </div>
 
-    <h2 style="color: aliceblue;">Series</h2>
+    <h2 style="color: aliceblue;">Tamil Movies</h2>
 
     <div class="scroll-cont">
             <div class="rowposter">
-              <ng-container *ngFor="let series of series" >
-                <img class="rowing" src="{{series.Poster}}" routerLink="/details/{{series.imdbID}}" routerLinkActive="active">
+              <ng-container *ngFor="let movie of TamilMovies" >
+                <img class="rowing" src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" routerLink="/details/{{movie.id}}" routerLinkActive="active">
               </ng-container>  
             </div>
     </div>

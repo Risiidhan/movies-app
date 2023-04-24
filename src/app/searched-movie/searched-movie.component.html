@@ -4,13 +4,16 @@
     
     <div class="bg">
         <h2>Searched Results....</h2>
-        <div class="scroll-cont">
-            <div class="rowposter">
-                <ng-container *ngFor="let movie of movie">
-                    <img class="rowing" src="{{movie.Poster}}" routerLink="/details/{{movie.imdbID}}"
-                        routerLinkActive="active">
-                </ng-container>
+        <div class="row">
+            <div class="col-sm-12 col-md-4" *ngFor="let movie of movie">
+
+                <div class="col-12 text-white" *ngIf="movie.poster_path">
+                <img class="rowing" src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" routerLink="/details/{{movie.id}}"
+                routerLinkActive="active">
+                <span class="title text-break">{{movie.title}}</span>
+                </div>
             </div>
+
         </div>
     </div>
     

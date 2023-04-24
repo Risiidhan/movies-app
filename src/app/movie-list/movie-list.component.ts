@@ -17,26 +17,37 @@ export class MovieListComponent implements OnInit {
   }
   
   movies:any[]=[];
-  series:any[]=[];
+  TamilMovies:any[]=[];
+  banners:any[]=[];
+
 
   constructor(private mService : MovieServiceService) { }
 
   ngOnInit(): void {
     this.getMovies();
-    this.getSeries();
+    this.getBanner();
+    this.getTamilMovies();
+
+  }
+
+  getBanner(){
+    this.mService.getBanners()
+    .subscribe((data :any)=>{
+      this.banners=data.results ;
+    })
   }
 
   getMovies(){ 
-    this.mService.getMovies()
+    this.mService.getTrends()
       .subscribe((data :any)=>{
-        this.movies=data.Search;
+        this.movies=data.results;
       })
   }
 
-  getSeries(){ 
-    this.mService.getSeries()
+  getTamilMovies(){ 
+    this.mService.getTamilMovies()
       .subscribe((data :any)=>{
-        this.series=data.Search;
+        this.TamilMovies=data.results;
       })
   }
 

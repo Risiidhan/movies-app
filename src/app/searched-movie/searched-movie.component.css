@@ -6,12 +6,9 @@
 }
 
 .rowing{
-    max-height: 250px;
-    object-fit: contain;
-    width: 100%;
-    box-sizing: content-box;
-    transition: transform 450ms;
-    margin-right: 8px;
+    max-height: 120px;
+    margin-bottom: 50px;
+    margin-left: 10px;
 }
 
 .rowing:hover{
@@ -19,8 +16,27 @@
     cursor: pointer;
 }
 
-.rowposter::-webkit-scrollbar{
-    display: none;
+.title{
+    font-size: 20px;
+    font-weight: 500;
+    width: 140px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin: 0 5px 0 5px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.err{
+    aspect-ratio: 2/3;
+}
+@media screen and (max-width: 600px) {
+  
+    .title{
+        width: 240px;
+    }
 }
 
 .transparent-gradient {
