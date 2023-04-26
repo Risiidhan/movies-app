@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieServiceService } from '../movie-service.service';
 
-
-
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
@@ -19,7 +17,7 @@ export class MovieListComponent implements OnInit {
   movies:any[]=[];
   TamilMovies:any[]=[];
   banners:any[]=[];
-
+  isMobile = false;
 
   constructor(private mService : MovieServiceService) { }
 
@@ -27,7 +25,16 @@ export class MovieListComponent implements OnInit {
     this.getMovies();
     this.getBanner();
     this.getTamilMovies();
+    this.onResize();
+  }
 
+  onResize(){
+    if(window.screen.width <= 600){
+      this.isMobile = true
+    } else{
+      this.isMobile = false;
+    }
+    console.log(this.isMobile,window.screen.width);
   }
 
   getBanner(){

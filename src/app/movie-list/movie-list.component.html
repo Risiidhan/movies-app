@@ -1,13 +1,30 @@
 <div class="bg">
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item" *ngFor="let item of banners; let i=index" data-bs-interval="25 00"
+        <div class="carousel-inner" *ngIf="!isMobile">
+          <div class="carousel-item" *ngFor="let item of banners; let i=index" data-bs-interval="2500"
           [ngClass]="{active:i===1}">
             <img src="https://image.tmdb.org/t/p/original{{item.backdrop_path}}" class="d-block transparent-gradient caro-img" alt="...">
             <div class="carousel-caption">
               <h5 class=" d-none d-md-block">{{item.title}}</h5>
               <p class="d-none d-md-block">{{item.overview}}</p>
-              <a routerLink="/details/{{item.id}}" class="d-md-block"><button class="bn30">VIEW</button></a>
+              <a routerLink="/details/{{item.id}}" class="d-md-block"><button class="bn30">VIEW NOW
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                </svg>
+              </button></a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-inner" *ngIf="isMobile">
+          <div class="carousel-item" *ngFor="let item of banners; let i=index" data-bs-interval="2500"
+          [ngClass]="{active:i===1}">
+            <img src="https://image.tmdb.org/t/p/original{{item.poster_path}}" class="d-block transparent-gradient caro-img" alt="...">
+            <div class="carousel-caption mobile" style="bottom: 14.25rem; text-align: left;">
+              <button type="button" class="btn btn-outline-light btn-lg" routerLink="/details/{{item.id}}">VIEW NOW
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -22,7 +39,7 @@
       </div>
 
 5
-    <h2 style="color: aliceblue;">Trending Movies</h2>
+    <h2 style="color: aliceblue;" class="py-3">Trending Movies</h2>
 
     <div class="scroll-cont">
             <div class="rowposter">
@@ -32,7 +49,7 @@
             </div>
     </div>
 
-    <h2 style="color: aliceblue;">Tamil Movies</h2>
+    <h2 style="color: aliceblue;" class="py-3">Tamil Movies</h2>
 
     <div class="scroll-cont">
             <div class="rowposter">

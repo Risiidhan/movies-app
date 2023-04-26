@@ -11,3 +11,10 @@ input.transparent-input:focus {
   color: rgb(173, 30, 30);
 }
 
+.input-group{
+  width: 90%;
+}
+
+.navbar-toggler{
+  margin-right: 20px;
+}
