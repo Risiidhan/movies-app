@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -9,26 +9,33 @@ import { Router } from '@angular/router';
 })
 export class NavBarComponent implements OnInit {
 
+  @ViewChild('search', { static: false }) search: ElementRef<HTMLInputElement> = {} as ElementRef;
+
   searchedMovie: string | undefined;
   h1color = 'transparent';
 
-  onSubmit(search:string){
-    this.searchedMovie=search
-    console.log(this.searchedMovie);
-    
+  onSubmit(search: string) {
+    this.searchedMovie = search
+
   }
 
-  constructor(private router: Router) { }
-  
+  constructor(private router: Router) {
+  }
+
   ngOnInit(): void {
   }
 
-  refresh(id:any): void {
+  refresh(id: any): void {
     this.router.navigateByUrl(`/search/${id}`);
-}
+    this.reset();
+  }
 
-onFocusEvent(event:any){
-  this.h1color = "white"
-}
+  reset() {
+    this.search.nativeElement.value = "";
+  }
+
+  onFocusEvent(event: any) {
+    this.h1color = "white"
+  }
 
 }
