@@ -1,0 +1,26 @@
+.footer{
+    background-color: #e9e3e3;
+    color: #B1221D;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.nav-item{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    width: 100% ;
+}
+
+
+.nav-brand{
+    font-weight: 700;
+    text-align: center;
+    color: rgb(173, 30, 30);
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100% ;
+  }

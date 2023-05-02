@@ -18,3 +18,7 @@ input.transparent-input:focus {
 .navbar-toggler{
   margin-right: 20px;
 }
+
+svg{
+  height: 32px;
+}

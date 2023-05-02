@@ -15,7 +15,7 @@
     position: relative;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .mPosImg {
         width: 100vw;
         border-radius: 0px;
@@ -24,14 +24,31 @@
         -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
     mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) 
     }
+    .row {
+        flex-direction: column;
+    }
+    .posterDiv {
+        order: 1;
+        margin-top: -11px;
+    }
+    .details {
+        order: 2;
+        margin-top: 20px;
+    }
+    .footer{
+        order: 3;
+    }
     .wallpaper { display: none; } 
     .nav-item{
         text-align: center;
     }
-    .footer{
-        display: flex;
-        justify-content: start;
-    }
+
+}
+
+
+@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
+@media (min-width:801px)  { 
+    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
 }
 
 @media screen and (max-width: 480px) {
@@ -42,17 +59,53 @@
         order: 1;
         margin-top: -11px;
     }
-
     .details {
         order: 2;
         margin-top: 20px;
     }
     .footer{
-        order:3;
-        
+        order: 3;
     }
+    .row-cont{
+        background: #181716;
+    }
+
+    
   
 }
+
+.footer{
+    background-color: #e9e3e3;
+    color: #B1221D;
+    margin-top: 30px;
+    /* display: flex; */
+    /* justify-content: center; */
+
+}
+html{
+    min-height: 100%;
+}
+body{
+    min-height: 100%;
+}
+
+.nav-item{
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    width: 100% ;
+}
+
+
+.nav-brand{
+    font-weight: 700;
+    text-align: center;
+    color: rgb(173, 30, 30);
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100% ;
+  }
 
 
 .posterDiv {
@@ -99,6 +152,7 @@ button {
 .row-cont{
     position: absolute;
     top: 15%;
+    /* background: #181716; */
 }
 
 td {
@@ -110,30 +164,3 @@ button:hover {
     background-color: #e9e3e3;
     color: #B1221D;
 }
-
-.footer{
-    background-color: #e9e3e3;
-    color: #B1221D;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-
-}
-
-.nav-item{
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: center;
-    width: 100% ;
-}
-
-
-.nav-brand{
-    font-weight: 700;
-    text-align: center;
-    color: rgb(173, 30, 30);
-    font-size: 25px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 100% ;
-  }
