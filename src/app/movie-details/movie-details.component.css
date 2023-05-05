@@ -37,6 +37,8 @@
     }
     .footer{
         order: 3;
+        height: 10vh;
+
     }
     .wallpaper { display: none; } 
     .nav-item{
@@ -46,10 +48,6 @@
 }
 
 
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { 
-    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
-}
 
 @media screen and (max-width: 480px) {
     .row {
@@ -65,6 +63,7 @@
     }
     .footer{
         order: 3;
+        height: 100%;
     }
     .row-cont{
         background: #181716;
@@ -78,10 +77,16 @@
     background-color: #e9e3e3;
     color: #B1221D;
     margin-top: 30px;
-    /* display: flex; */
+    height: 100%;
+    height: calc(100vh - 490px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /* display: flex; */
     /* justify-content: center; */
 
 }
+
 html{
     min-height: 100%;
 }
